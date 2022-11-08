@@ -1,5 +1,5 @@
 ---
-- hosts: webserver
+- hosts: localhost
   vars:
       package_name: apache2
   tasks:
