@@ -1,0 +1,13 @@
+---
+- hosts: webserver
+  vars:
+      package_name: apache2
+  tasks:
+  #install update
+      - name: install apache2
+        ansible.builtin.apt:
+          name: "{{package_name}}"
+          state: present
+          update-cache: yes
+        become : yes
+        when: ansible_facts['distribution'] == "Ubuntu"
